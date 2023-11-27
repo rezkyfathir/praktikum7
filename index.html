@@ -70,11 +70,7 @@
                         <th scope="row">Kampus</th>\
                         <td>' + (feature.properties['Kampus'] !== null ? autolinker.link(feature.properties['Kampus'].toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <th scope="row">FOTO</th>\
-                        <td>' + (feature.properties['FOTO'] !== null ? '<img src="images/' + String(feature.properties['FOTO']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
-                    </tr>\
-                    <tr>\
+                                       <tr>\
                         <th scope="row">Ranking QS</th>\
                         <td>' + (feature.properties['Deskripsi Univ CSV_1QS WUR'] !== null ? autolinker.link(feature.properties['Deskripsi Univ CSV_1QS WUR'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -85,6 +81,12 @@
                     <tr>\
                         <td colspan="2"><strong>fakultas</strong><br />' + (feature.properties['Deskripsi Univ CSV_1Fakultas'] !== null ? autolinker.link(feature.properties['Deskripsi Univ CSV_1Fakultas'].toLocaleString()) : '') + '</td>\
                     </tr>\
+                 <tr>\
+                        <th scope="row">FOTO</th>\
+                        <td>' + (feature.properties['FOTO'] !== null ? '<img src="images/' + String(feature.properties['FOTO']).replace(/[\\\/:]/g, '_') .trim() + '" '+ 'class=popupImage' +'>' : ''
+
+                    </tr>\
+
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
